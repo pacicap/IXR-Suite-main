@@ -367,9 +367,7 @@ class IXRDashboard(Thread):
                                                     window=WindowOperations.BLACKMAN_HARRIS.value)
 
                 lim = min(48, len(psd_data[0]))
-
                 self.psd_curves[graph_number].setData(psd_data[1][0:lim].tolist(), psd_data[0][0:lim].tolist())
-
                 # compute bands
                 delta = DataFilter.get_band_power(psd_data, 1.0, 4.0)
                 theta = DataFilter.get_band_power(psd_data, 4.0, 8.0)
